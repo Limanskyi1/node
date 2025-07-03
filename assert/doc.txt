@@ -1,0 +1,14 @@
+1. assert.fail([message]) - throws an error  
+2. assert.AssertionError - any error we get is its successor.
+3. assert.ok(value[, message]) - checks if the value is true or false
+4. assert.strictEqual(actual, expected[, message]) - checks two values equality 
+5. assert.notStrictEqual(actual, expected[, message]) - checks two values for inequality
+6. assert.deepStrictEqual(actual, expected[, message]) - checks two values for deep equality
+7. assert.notDeepStrictEqual(actual, expected[, message]) - checks two values for deep inequality
+8. assert.throws(fn[, error][, message]) - checks if the function throws an error
+9. assert.rejects(asyncFn[, error][, message]) - checks if the async function throws an error
+10. assert.doesNotThrow(fn[, error][, message]) - checks if the function doesn't throw an error
+11. assert.doesNotReject(asyncFn[, error][, message]) - checks if the async function doesn't throw an error
+12. assert.ifError(value) - checks if the value is null or undefined
+13. assert.match(string, regexp[, message]) - expects that string match the expression
+14. assert.doesNotMatch(string, regexp[, message]) - expects that string will not match the expression
