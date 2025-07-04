@@ -1,0 +1,20 @@
+1. new AsyncLocalStorage([options]) - this class creates store that stay coherent through asynchronous operations
+2. AsyncLocalStorage.bind(fn) - binds function to current execution context | we can not use it in 22v
+3. AsyncLocalStorage.snapshot() - binds the current execution context and returns a function that takes a function as an argument. Each time the function is called,
+ it runs in the captured context.
+4. asyncLocalStorage.disable() (Experimental) - {
+    Disables the instance of AsyncLocalStorage. 
+    All subsequent calls to asyncLocalStorage.getStore() will return undefined until asyncLocalStorage.run() or asyncLocalStorage.enterWith() is called again.
+}
+5. asyncLocalStorage.getStore() - {
+    Returns the current store. 
+    If called outside of an asynchronous context initialized by calling asyncLocalStorage.run() or asyncLocalStorage.enterWith(), it returns undefined.
+}
+6. asyncLocalStorage.enterWith(store) - {
+    Transitions into the context for the remainder of the current synchronous execution and then persists the store through any following asynchronous calls.
+}
+7. asyncLocalStorage.name - returns the name of the AsyncLocalStorage instance if provided.
+8. asyncLocalStorage.run(store, callback[, ...args]) - {
+    Runs a function synchronously within a context and returns its return value. The store is not accessible outside of the callback function. 
+    The store is accessible to any asynchronous operations created within the callback.
+}
